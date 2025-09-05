@@ -1,6 +1,6 @@
 import pytest
 import os
-from invoice import (
+from app import (
     getItemName, getItemNumber, getPrice, availableQuantity,
     getCurrencyValue, adjustStockQuantity, checkStock,
     calculateVAT, discount, createInvoiceData, generateInvoice
