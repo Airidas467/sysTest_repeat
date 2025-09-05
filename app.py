@@ -1,22 +1,18 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template
 
+# Create the Flask app
 app = Flask(__name__)
 
-# Home page
-@app.route('/')
+# Home page route
+@app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template("index.html")
 
-# Hello route
-@app.route('/hello/<name>')
+# Dynamic route example
+@app.route("/hello/<name>")
 def hello(name):
-    return f"Hello, {name}!"
+    return f"<h1>Hello, {name}!</h1><p>Welcome to my Flask App.</p>"
 
-# Simple API POST route
-@app.route('/api/data', methods=['POST'])
-def api_data():
-    data = request.json
-    return jsonify({"received": data})
-
+# Run the app
 if __name__ == "__main__":
     app.run(debug=True)
